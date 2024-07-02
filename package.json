@@ -1,0 +1,14 @@
+{
+    "name": "sincroniza",
+    "version": "1.0.0",
+    "description": "desafio tecnico moodle",
+    "main": "index.js",
+    "scripts": {
+        "compile:sass": "sass scss/main.scss css/style.css -w"
+    },
+    "author": "Lorena Bastos",
+    "license": "ISC",
+    "devDependencies": {
+        "sass": "^1.77.6"
+    }
+}
