@@ -56,6 +56,8 @@ html {
     font-size: 10px;
 }
 
+/* TEXTO ESTILIZADO */
+
 body {
     font-family: "Catamaran-Regular", sans-serif;
     font-size: 16px;
@@ -76,7 +78,35 @@ body {
     font-size: 32px;
     line-height: 32px;
     margin-bottom: 20px;
+
+    &--minor {
+        font-size: 18px;
+    }
 }
+
+/* LISTAS ESTILIZADAS */
+
+.list-custom {
+    text-align: left;
+}
+
+.list-item-custom {
+    list-style: circle;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* SEPARADOR ESTILIZADO */
+
+.separator-dashed {
+    margin: 60px 0;
+    border-top: 6px dotted $color-secondary-cyan;
+}
+
+/* SEÇÕES DE DESTAQUE */
 
 .feature-box {
     margin: 60px 0;
@@ -111,6 +141,10 @@ body {
 
     .p-highlight {
         width: 65%;
+
+        &--minor {
+            width: 100%;
+        }
     }
 }
 
@@ -143,6 +177,12 @@ body {
 
     .text-group {
         width: 30%;
+    }
+
+    &--inverse {
+        .video-iframe {
+            box-shadow: 10px 10px 0 $color-secondary-cyan;
+        }
     }
 }
 
@@ -232,6 +272,10 @@ body {
     border-radius: $border-radius-soft;
     transition: all 0.2s ease-in;
 
+    &--top {
+        justify-content: flex-start;
+    }
+
     &:hover {
         background-color: $color-secondary-grey-light;
         box-shadow: 6px 6px 0 $color-primary-blue;
@@ -266,6 +310,54 @@ body {
     }
 }
 
+/* INFOGRAFICO */
+
+.arrow-fluxogram {
+    gap: 20px;
+
+    * {
+        padding: 10px;
+        margin-bottom: 0;
+        border-radius: $border-radius-soft;
+    }
+
+    &__col {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__header {
+        color: $color-white;
+        background-color: $color-primary-blue;
+    }
+    &__cell {
+        position: relative;
+        color: $color-primary-blue;
+        background-color: $color-secondary-grey-light;
+    }
+}
+
+ion-icon {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -60%);
+    font-size: 42px;
+    color: $color-primary-blue;
+}
+
+/* DIV EXEMPLOS DE PDF-FLIPBOOK */
+
+.examples {
+    display: flex;
+    gap: 30px;
+}
+
+/* MEDIA QUERIES */
+
 @media (max-width: 1000px) {
     .box-text {
         .p-highlight {
@@ -279,6 +371,10 @@ body {
 
         .text-group {
             width: 100%;
+        }
+
+        &--inverse {
+            flex-direction: column-reverse;
         }
     }
 
@@ -298,5 +394,14 @@ body {
         margin-top: 60px;
         padding: 40px;
         padding-top: 80px;
+    }
+
+    .arrow-fluxogram {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .examples {
+        flex-wrap: wrap;
     }
 }

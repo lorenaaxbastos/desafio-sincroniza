@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Cicle Gordita";
   src: url(../fonts/cicle/Cicle\ Gordita.ttf) format("truetype");
@@ -33,6 +34,7 @@ html {
   font-size: 10px;
 }
 
+/* TEXTO ESTILIZADO */
 body {
   font-family: "Catamaran-Regular", sans-serif;
   font-size: 16px;
@@ -53,7 +55,30 @@ body {
   line-height: 32px;
   margin-bottom: 20px;
 }
+.p-highlight--minor {
+  font-size: 18px;
+}
 
+/* LISTAS ESTILIZADAS */
+.list-custom {
+  text-align: left;
+}
+
+.list-item-custom {
+  list-style: circle;
+  margin-bottom: 10px;
+}
+.list-item-custom:last-child {
+  margin-bottom: 0;
+}
+
+/* SEPARADOR ESTILIZADO */
+.separator-dashed {
+  margin: 60px 0;
+  border-top: 6px dotted #03ddd5;
+}
+
+/* SEÇÕES DE DESTAQUE */
 .feature-box {
   margin: 60px 0;
   border-radius: 1rem;
@@ -85,6 +110,9 @@ body {
 .box-text .p-highlight {
   width: 65%;
 }
+.box-text .p-highlight--minor {
+  width: 100%;
+}
 
 .btn-custom:link, .btn-custom:visited {
   margin-top: 10px;
@@ -111,6 +139,9 @@ body {
 }
 .box-video .text-group {
   width: 30%;
+}
+.box-video--inverse .video-iframe {
+  box-shadow: 10px 10px 0 #03ddd5;
 }
 
 .video-iframe {
@@ -193,6 +224,9 @@ body {
   border-radius: 1rem;
   transition: all 0.2s ease-in;
 }
+.card-box--top {
+  justify-content: flex-start;
+}
 .card-box:hover {
   background-color: #e5e5e5;
   box-shadow: 6px 6px 0 #09374c;
@@ -222,6 +256,48 @@ body {
   color: #ffffff;
 }
 
+/* INFOGRAFICO */
+.arrow-fluxogram {
+  gap: 20px;
+}
+.arrow-fluxogram * {
+  padding: 10px;
+  margin-bottom: 0;
+  border-radius: 1rem;
+}
+.arrow-fluxogram__col {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.arrow-fluxogram__header {
+  color: #ffffff;
+  background-color: #09374c;
+}
+.arrow-fluxogram__cell {
+  position: relative;
+  color: #09374c;
+  background-color: #e5e5e5;
+}
+
+ion-icon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -60%);
+  font-size: 42px;
+  color: #09374c;
+}
+
+/* DIV EXEMPLOS DE PDF-FLIPBOOK */
+.examples {
+  display: flex;
+  gap: 30px;
+}
+
+/* MEDIA QUERIES */
 @media (max-width: 1000px) {
   .box-text .p-highlight {
     width: 100%;
@@ -232,6 +308,9 @@ body {
   }
   .box-video .text-group {
     width: 100%;
+  }
+  .box-video--inverse {
+    flex-direction: column-reverse;
   }
   .video-iframe {
     width: 100%;
@@ -247,6 +326,13 @@ body {
     margin-top: 60px;
     padding: 40px;
     padding-top: 80px;
+  }
+  .arrow-fluxogram {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .examples {
+    flex-wrap: wrap;
   }
 }
 
